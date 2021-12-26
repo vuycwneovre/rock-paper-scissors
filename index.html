@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPS</title>
+    <title>Rock, paper, scissors</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="myscripts.js" defer></script>
 </head>
 
 <body>
-    <script type="text/javascript" src="myscripts.js"></script>
-
     <!-- header -->
 
     <div class="header">
         <div> Rock, paper, scissors</div>
     </div>
 
-
     <!-- Middle, with pictures and buttons for RPS-->
 
     <div class="middle">
         <div class="rock">
             <img src="images/rock.png" alt="rock">
+            <button class="button" onclick="playerPlay(rock)">Rock</button>
         </div>
 
         <div class="paper">
             <img src="images/paper.png" alt="paper">
+            <button class="button" onclick="playerPlay(paper)">Paper</button>
         </div>
 
         <div class="scissors">
             <img src="images/scissors.png" alt="scissors">
+            <button class="button" onclick="playerPlay(scissors)">Scissors</button>
         </div>
     </div>
 
-    <!-- Bottom with score -->
+    <!-- Score -->
 
     <div class="bottom">
         <div class="score">
