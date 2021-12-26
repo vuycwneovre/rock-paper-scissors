@@ -1,2 +1,4 @@
 # rock-paper-scissors
-odin project exercise
+
+
+This project from the foundations part of The Odin Project consists

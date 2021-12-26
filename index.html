@@ -21,17 +21,17 @@
     <div class="middle">
         <div class="rock">
             <img src="images/rock.png" alt="rock">
-            <button class="button" onclick="playerPlay(rock) && playRound()">Rock</button>
+            <button class="button" onclick="playRound(playerPlay(rock))">Rock</button>
         </div>
 
         <div class="paper">
             <img src="images/paper.png" alt="paper">
-            <button class="button" onclick="playerPlay(paper) && playRound()">Paper</button>
+            <button class="button" onclick="playRound(playerPlay(paper))">Paper</button>
         </div>
 
         <div class="scissors">
             <img src="images/scissors.png" alt="scissors">
-            <button class="button" onclick="playerPlay(scissors) && playRound()">Scissors</button>
+            <button class="button" onclick="playRound(playerPlay(scissors))">Scissors</button>
         </div>
     </div>
 
@@ -39,10 +39,11 @@
 
     <div class="bottom">
         <div class="score">
-            <div id="player"></div>
+            <div id="player">0</div>
             <div>-</div>
-            <div id="computer"></div>
+            <div id="computer">0</div>
         </div>
+        <button class="button" onclick="restart()">Restart</button>
     </div>
 
 </body>

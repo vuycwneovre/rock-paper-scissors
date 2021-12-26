@@ -7,10 +7,10 @@ const scissors = 3;
 
 let score_computer = 0;
 let computer = document.getElementById('computer');
-computer.innerHTML=score_computer;
+
 let score_player = 0;
 let player = document.getElementById('player');
-player.innerHTML=score_player;
+
 
 // player input
 function playerPlay(input) {
@@ -30,32 +30,40 @@ function playRound(playerSelection) {
     
     // Tie
     if (computerSelection === playerSelection){
-        return console.log("Tie!");
+        console.log("Tie!");
     }
         
     //Computer wins
     if (computerSelection === 1 && playerSelection === 3 ||
         computerSelection === 3 && playerSelection === 2 ||
         computerSelection === 2 && playerSelection === 1) {
-        score_computer = score_computer + 1;
-        return "Computer wins";
+        score_computer++;
+        computer.innerHTML=score_computer;
+        console.log("Computer wins");
     }
 
     //Player wins
     if (computerSelection === 3 && playerSelection === 1 ||
         computerSelection === 2 && playerSelection === 3 ||
         computerSelection === 1 && playerSelection === 2) {
-        score_player = score_player + 1;
-        return "Player wins";
+        score_player++;
+        player.innerHTML=score_player;
+        console.log("Player wins");
     }
     
 
     if (score_computer > score_player && score_computer >= 5){
-        alert("Computer wins");
+        alert("Computer wins, press restart");
     } else if (score_computer < score_player && score_player >= 5) {
-        alert("Player wins");
+        alert("Player wins, press restart");
     }
 
-    console.log("done");
     return 0;
 } 
+
+function restart () {
+    score_player = 0;
+    score_computer = 0;
+    player.innerHTML = 0;
+    computer.innerHTML = 0;
+}

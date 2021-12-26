@@ -54,6 +54,7 @@ button {
     align-items: center;
     padding-top: 200px;
     font-size: 40px;
+    flex-direction: column;
 }
 .score {
     display: flex;
