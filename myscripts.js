@@ -92,22 +92,6 @@ function who_wins(computerSelection, playerSelection) {
 }
 
 
-// five rounds of the game
-
-// initial values
-round = 1;
-score_computer = 0;
-score_player = 0;
-
-function game (number_of_rounds) {
-
-    while (round<=number_of_rounds){
-        
-        who_wins(computerSelection, playerSelection);
-        console.log(round++);
-    }
-}
-
 
 
 
