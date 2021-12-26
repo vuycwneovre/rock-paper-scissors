@@ -5,20 +5,14 @@ const rock = 1;
 const paper = 2;
 const scissors = 3;
 
-/* computerPlay generates 
-random rock, paper, scissors
-each thing i.e. rock, paper...
-has one number associated */
-function computerPlay(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-const computerSelection = computerPlay(1,3);
+let score_computer = 0;
+let computer = document.getElementById('computer');
+computer.innerHTML=score_computer;
+let score_player = 0;
+let player = document.getElementById('player');
+player.innerHTML=score_player;
 
-
-/* playerPlay
-player inputs rock, paper or scissors
-in the console, save input in playerSelection
-to compare and see who wins */
+// player input
 function playerPlay(input) {
     console.log(input);
     return input;
@@ -26,41 +20,42 @@ function playerPlay(input) {
 const playerSelection = playerPlay();
 
 
-/* plays one round of rock, paper, scissors
-compares numbers, decides who wins */
-function who_wins(computerSelection, playerSelection) {
+function playRound(playerSelection) {
+    // random generator for computer
+    function computerPlay(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    const computerSelection = computerPlay(1,3);
+    console.log(computerSelection);
     
     // Tie
     if (computerSelection === playerSelection){
-        return "Tie!";
+        return console.log("Tie!");
     }
         
     //Computer wins
-    if (computerSelection === 1 && playerSelection === 3){
-        //score_computer++;
-        return "Rock beats scissors, computer wins"
+    if (computerSelection === 1 && playerSelection === 3 ||
+        computerSelection === 3 && playerSelection === 2 ||
+        computerSelection === 2 && playerSelection === 1) {
+        score_computer = score_computer + 1;
+        return "Computer wins";
     }
-    if (computerSelection === 3 && playerSelection === 2){
-        //score_computer++;
-        return "Scissors beats paper, computer wins"
-    }
-    if (computerSelection === 2 && playerSelection === 1){
-        //score_computer++;
-        return "Paper beats rock, computer wins"
-    }
-        
-        
+
     //Player wins
-    if(computerSelection === 3 && playerSelection === 1){
-        //score_player++;
-        return "Rock beats scissors, player wins"
+    if (computerSelection === 3 && playerSelection === 1 ||
+        computerSelection === 2 && playerSelection === 3 ||
+        computerSelection === 1 && playerSelection === 2) {
+        score_player = score_player + 1;
+        return "Player wins";
     }
-    if (computerSelection === 2 && playerSelection === 3){
-        //score_player++;
-        return "Scissors beats paper, player wins"
+    
+
+    if (score_computer > score_player && score_computer >= 5){
+        alert("Computer wins");
+    } else if (score_computer < score_player && score_player >= 5) {
+        alert("Player wins");
     }
-    if (computerSelection === 1 && playerSelection === 2){
-        //score_player++;
-        return "Paper beats rock, player wins"
-    }
+
+    console.log("done");
+    return 0;
 } 
